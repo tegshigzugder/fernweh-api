@@ -1,0 +1,164 @@
+{
+  "places": [
+    {
+      "formattedAddress": "Thomaskirchhof 11, 04109 Leipzig, Germany",
+      "rating": 4.2,
+      "displayName": {
+        "text": "Café Kandler",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Reichsstraße 2, 04109 Leipzig, Germany",
+      "rating": 4.4,
+      "displayName": {
+        "text": "Café Central",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Windmühlenstraße 29, 04107 Leipzig, Germany",
+      "rating": 4.1,
+      "displayName": {
+        "text": "Café Cantona",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Brüderstraße 6, 04103 Leipzig, Germany",
+      "rating": 4.6,
+      "displayName": {
+        "text": "Café Corso",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Schuhmachergäßchen 1, 04109 Leipzig, Germany",
+      "rating": 4.1,
+      "displayName": {
+        "text": "Kaffeehaus Riquet Café",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Café im Bach-Museum, Thomaskirchhof 15, 04109 Leipzig, Germany",
+      "rating": 4.1,
+      "displayName": {
+        "text": "Café Gloria - Kaffee, Kuchen, Frühstück und Bistro",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Burgstraße 1-5, 04109 Leipzig, Germany",
+      "rating": 4.5,
+      "displayName": {
+        "text": "Café Bigoti",
+        "languageCode": "en"
+      }
+    },
+    {
+      "formattedAddress": "Richard-Wagner-Platz 1, 04109 Leipzig, Germany",
+      "rating": 3.7,
+      "displayName": {
+        "text": "Café Wagner",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Bosestraße 4, 04109 Leipzig, Germany",
+      "rating": 4.2,
+      "displayName": {
+        "text": "Café Luise",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Nikolaistraße 3-5, 04109 Leipzig, Germany",
+      "rating": 4.3,
+      "displayName": {
+        "text": "Café Kandler",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Karl-Liebknecht-Straße 62, 04275 Leipzig, Germany",
+      "rating": 4.4,
+      "displayName": {
+        "text": "Café Maître and Pâtisserie",
+        "languageCode": "en"
+      }
+    },
+    {
+      "formattedAddress": "Riemannstraße 44, 04107 Leipzig, Germany",
+      "rating": 4.6,
+      "displayName": {
+        "text": "Uptown Coffee Bar",
+        "languageCode": "en"
+      }
+    },
+    {
+      "formattedAddress": "Katharinenstraße 2, 04109 Leipzig, Germany",
+      "rating": 3.7,
+      "displayName": {
+        "text": "Stein Café",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Nikolaistraße 55, 04109 Leipzig, Germany",
+      "rating": 4.2,
+      "displayName": {
+        "text": "Coffee Fellows - Kaffee, Bagels, Frühstück",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Karl-Liebknecht-Straße 74, 04275 Leipzig, Germany",
+      "rating": 4.3,
+      "displayName": {
+        "text": "Café Puschkin",
+        "languageCode": "en"
+      }
+    },
+    {
+      "formattedAddress": "Käthe-Kollwitz-Straße 83, 04109 Leipzig, Germany",
+      "rating": 4.9,
+      "displayName": {
+        "text": "Café Kollwitz - Kaffee, Kuchen & Vegan",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Kolonnadenstraße 5, 04109 Leipzig, Germany",
+      "rating": 4.6,
+      "displayName": {
+        "text": "Café Tunichtgut",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Jahnallee 23, 04109 Leipzig, Germany",
+      "rating": 4.5,
+      "displayName": {
+        "text": "Dankbar Kaffee Leipzig",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "Peterssteinweg 10, 04107 Leipzig, Germany",
+      "rating": 3.9,
+      "displayName": {
+        "text": "Café Waldi - biozertifizierter Kaffee & regionale Backwaren",
+        "languageCode": "de"
+      }
+    },
+    {
+      "formattedAddress": "August-Bebel-Straße 1, 04275 Leipzig, Germany",
+      "rating": 4.8,
+      "displayName": {
+        "text": "Café NiMo",
+        "languageCode": "de"
+      }
+    }
+  ]
+}

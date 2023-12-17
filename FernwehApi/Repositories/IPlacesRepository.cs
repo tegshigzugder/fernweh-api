@@ -2,5 +2,6 @@ namespace FernwehApi.Repositories;
 
 public interface IPlacesRepository
 {
-    void OnGet(string apiUrl);
+	Task OnGetFindPlace(string fields, string input);
+	Task OnGetSearchText(string fields, string input);
 }

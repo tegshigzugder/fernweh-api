@@ -1,3 +1,4 @@
+using FernwehApi.Repositories;
 using FernwehApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,14 +10,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 builder.Services.AddSingleton<IPlacesService, PlacesService>();
+builder.Services.AddSingleton<IPlacesRepository, PlacesRepository>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+	app.UseSwagger();
+	app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

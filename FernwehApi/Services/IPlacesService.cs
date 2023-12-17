@@ -1,7 +1,7 @@
 namespace FernwehApi.Services
 {
-    public interface IPlacesService
-    {
-        void OnGet();
-    }
+	public interface IPlacesService
+	{
+		void OnGet();
+	}
 }
