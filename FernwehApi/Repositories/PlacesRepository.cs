@@ -49,7 +49,7 @@ namespace FernwehApi.Repositories
 		private static void WriteToFile(string result)
 		{
 			var dt = String.Format("{0:s}", DateTime.Now);
-			var fileName = dt + ".json";
+			var fileName = "Results/" + dt + ".json";
 			// Exception: Could not find a part of the path '/Users/tegshig/Documents/beProjects/fernweh-api/FernwehApi/12/17/2023 14:45:08result.json'.
 			File.WriteAllText(fileName, result);
 		}
