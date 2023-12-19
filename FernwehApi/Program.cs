@@ -24,7 +24,20 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+IConfiguration configuration = new ConfigurationBuilder()
+		.SetBasePath(Directory.GetCurrentDirectory())
+		.AddJsonFile("connectionstrings.json")
+	.Build();
 
+// var result = configuration.GetConnectionString("Database");
+
+// define DbContext
+
+// builder.Services.AddDbContext<DbContext>(options =>
+// {
+// 	options.UseSqlServer(builder.Configuration.GetConnectionString("Database"));
+
+// });
 
 
 
