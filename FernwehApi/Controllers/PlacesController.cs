@@ -1,3 +1,4 @@
+using FernwehApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Controllers;
@@ -5,16 +6,18 @@ namespace Controllers;
 [Route("[controller]")]
 public class PlacesController : ControllerBase
 {
-    private readonly ILogger<PlacesController> _logger;
+	private readonly ILogger<PlacesController> _logger;
+	private readonly IPlacesService _placesService;
 
-    public PlacesController(ILogger<PlacesController> logger)
-    {
-        _logger = logger;
-    }
+	public PlacesController(ILogger<PlacesController> logger, IPlacesService placesService)
+	{
+		_logger = logger;
+		_placesService = placesService;
+	}
 
-    [HttpGet(Name = "GetPlaces")]
-    public void Get()
-    {
-        Console.WriteLine("Test");
-    }
+	[HttpGet(Name = "onGet")]
+	public void OnGet()
+	{
+		_placesService.OnGet();
+	}
 }

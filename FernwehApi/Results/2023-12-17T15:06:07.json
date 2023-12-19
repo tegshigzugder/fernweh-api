@@ -1,0 +1,29 @@
+{
+  "candidates": [
+    {
+      "formatted_address": "Brüderstraße 6, 04103 Leipzig, Deutschland",
+      "geometry": {
+        "location": {
+          "lat": 51.333673,
+          "lng": 12.3789013
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 51.33500887989272,
+            "lng": 12.38025547989272
+          },
+          "southwest": {
+            "lat": 51.33230922010728,
+            "lng": 12.37755582010728
+          }
+        }
+      },
+      "name": "Café Corso",
+      "opening_hours": {
+        "open_now": true
+      },
+      "rating": 4.6
+    }
+  ],
+  "status": "OK"
+}
