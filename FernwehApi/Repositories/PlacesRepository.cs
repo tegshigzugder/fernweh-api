@@ -1,4 +1,6 @@
 using System.Text;
+using System.Text.Json;
+using FernwehApi.Models;
 
 namespace FernwehApi.Repositories
 {
@@ -24,15 +26,14 @@ namespace FernwehApi.Repositories
 						$"&inputtype=textquery" +
 						$"&key={_googleKey}";
 
-			using HttpClient client = new HttpClient();
+			using var client = new HttpClient();
 			try
 			{
-				HttpResponseMessage response = await client.GetAsync(apiUrl);
+				var response = await client.GetAsync(apiUrl);
 				if (response.IsSuccessStatusCode)
 				{
-					string result = await response.Content.ReadAsStringAsync();
+					var result = await response.Content.ReadAsStringAsync();
 					Console.WriteLine(result);
-					// returning single candidate but working
 					WriteToFile(result);
 				}
 				else
@@ -50,11 +51,10 @@ namespace FernwehApi.Repositories
 		{
 			var dt = String.Format("{0:s}", DateTime.Now);
 			var fileName = "Results/" + dt + ".json";
-			// Exception: Could not find a part of the path '/Users/tegshig/Documents/beProjects/fernweh-api/FernwehApi/12/17/2023 14:45:08result.json'.
 			File.WriteAllText(fileName, result);
 		}
 
-		public async Task OnGetSearchText(string fields, string input)
+		public async Task<ListPlaces> OnGetSearchText(string fields, string input)
 		{
 			using var client = new HttpClient();
 			string requestBody = @"{
@@ -66,9 +66,7 @@ namespace FernwehApi.Repositories
 			request.Headers.Add("X-Goog-FieldMask", fields);
 			request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 
-
 			var response = await client.SendAsync(request);
-
 
 			// Check if the request was successful (status code 200)
 			if (response.IsSuccessStatusCode)
@@ -77,12 +75,15 @@ namespace FernwehApi.Repositories
 				string result = await response.Content.ReadAsStringAsync();
 				Console.WriteLine(result);
 				WriteToFile(result);
+				var listPlaces = JsonSerializer.Deserialize<ListPlaces>(result);
+				return null;
 			}
 			else
 			{
 				// Display error message if the request was not successful
 				Console.WriteLine($"Error: {response.StatusCode} - {response.ReasonPhrase}");
 			}
+			return new ListPlaces() { };
 		}
 	}
 }

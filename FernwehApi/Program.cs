@@ -1,7 +1,16 @@
+using FernwehApi.Models;
 using FernwehApi.Repositories;
 using FernwehApi.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<PlacesDbContext>(options =>
+{
+	var connectionString = builder.Configuration.GetConnectionString("Database");
+	Console.WriteLine(connectionString);
+	options.UseSqlServer(connectionString);
+});
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -9,8 +18,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
-builder.Services.AddSingleton<IPlacesService, PlacesService>();
-builder.Services.AddSingleton<IPlacesRepository, PlacesRepository>();
+builder.Services.AddScoped<IPlacesService, PlacesService>();
+builder.Services.AddScoped<IPlacesRepository, PlacesRepository>();
+builder.Services.AddScoped<IPlacesDbRepository, PlacesDbRepository>();
 
 var app = builder.Build();
 
@@ -24,21 +34,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
-IConfiguration configuration = new ConfigurationBuilder()
-		.SetBasePath(Directory.GetCurrentDirectory())
-		.AddJsonFile("connectionstrings.json")
-	.Build();
-
-// var result = configuration.GetConnectionString("Database");
-
-// define DbContext
-
-// builder.Services.AddDbContext<DbContext>(options =>
-// {
-// 	options.UseSqlServer(builder.Configuration.GetConnectionString("Database"));
-
-// });
-
 
 
 app.Run();

@@ -18,6 +18,6 @@ public class PlacesController : ControllerBase
 	[HttpGet(Name = "onGet")]
 	public void OnGet()
 	{
-		_placesService.OnGet();
+		_placesService.OnGetSearchText();
 	}
 }

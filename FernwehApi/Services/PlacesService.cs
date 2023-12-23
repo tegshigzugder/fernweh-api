@@ -4,28 +4,35 @@ namespace FernwehApi.Services
 {
 	public class PlacesService : IPlacesService
 	{
-		// place type
-		// city
 		private readonly IPlacesRepository _placesRepository;
+		private readonly IPlacesDbRepository _placesDbRepository;
 
-		public PlacesService(IPlacesRepository placesRepository)
+		public PlacesService(IPlacesRepository placesRepository,
+		IPlacesDbRepository placesDbRepository)
 		{
 			_placesRepository = placesRepository;
+			_placesDbRepository = placesDbRepository;
 		}
 
-		public async void OnGet()
+		public async void OnGetFindPlace()
 		{
-
-			var fieldsList = new List<string>
-		{
+			var fieldsList = new List<string>{
 			"formatted_address",
 			"name",
 			"rating",
 			"opening_hours",
 			"geometry"
-		};
+			};
 
-			var fieldsList2 = new List<string>{
+			var fields = string.Join(",", fieldsList);
+			var input = Uri.EscapeDataString("Cafes In Leipzig");
+
+			await _placesRepository.OnGetFindPlace(fields, input);
+		}
+
+		public async void OnGetSearchText()
+		{
+			var fieldsList = new List<string>{
 				"places.rating",
 				"places.userRatingCount",
 				"places.formattedAddress",
@@ -33,11 +40,11 @@ namespace FernwehApi.Services
 			};
 
 			var fields = string.Join(",", fieldsList);
-			var fields2 = string.Join(",", fieldsList2);
 			var input = Uri.EscapeDataString("Cafes In Leipzig");
 
-			// await _placesRepository.OnGetFindPlace(fields, input);
-			await _placesRepository.OnGetSearchText(fields2, input);
+			var results = await _placesRepository.OnGetSearchText(fields, input);
+
+			await _placesDbRepository.Save(results.Places);
 		}
 	}
 }
