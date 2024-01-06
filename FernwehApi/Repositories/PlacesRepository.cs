@@ -1,6 +1,10 @@
+using System.IO;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FernwehApi.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace FernwehApi.Repositories
 {

@@ -1,14 +1,14 @@
 # Tickets 
 
-## FERNWEH-1
+## FERNWEH-API-1
 
 - use google places api to retrieve possbile candidates
 
-## FERNWEH-2
+## FERNWEH-API-2
 
 - write into local db
 - add efcore
 
-## FERNWEH-3
+## FERNWEH-API-3
 
 - evaluate and make suggestions from local db

@@ -1,5 +1,6 @@
 using FernwehApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Controllers;
 [ApiController]

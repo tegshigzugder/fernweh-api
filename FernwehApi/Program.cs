@@ -1,15 +1,32 @@
 using FernwehApi.Models;
 using FernwehApi.Repositories;
 using FernwehApi.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddJsonFile("connectionstrings.json");
+builder.Configuration.AddJsonFile("secrets.json");
 builder.Services.AddDbContext<PlacesDbContext>(options =>
 {
 	var connectionString = builder.Configuration.GetConnectionString("Database");
 	Console.WriteLine(connectionString);
 	options.UseSqlServer(connectionString);
+});
+
+builder.Services.AddCors(options =>
+{
+	options.AddDefaultPolicy(
+		builder =>
+		{
+			builder.AllowAnyOrigin()
+								.AllowAnyHeader()
+								.AllowAnyMethod();
+		});
 });
 
 // Add services to the container.
@@ -35,5 +52,6 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
+app.UseCors();
 
 app.Run();

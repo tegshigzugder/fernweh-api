@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using FernwehApi.Models;
 
 namespace FernwehApi.Repositories

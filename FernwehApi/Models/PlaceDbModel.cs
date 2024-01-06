@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace FernwehApi.Models
 {
 	public class ListPlaces
